@@ -1,2 +1,2 @@
-# SAP CAP dummy repo
-Dummy repo for getting started quickly when prototyping things in  [SAP CAP](https://cap.cloud.sap/docs/).
+# Fiori Elements Analytical List test repo
+Dummy repo to try implementing an analytical list using [Fiori Elements](https://sapui5.hana.ondemand.com/#/topic/3d33684b08ca4490b26a844b6ce19b83) and [SAP CAP](https://cap.cloud.sap/docs/).

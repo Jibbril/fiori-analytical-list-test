@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="MyService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Books" EntityType="MyService.Books">
+                    <NavigationPropertyBinding Path="author" Target="Authors"/>
+                </EntitySet>
+                <EntitySet Name="Authors" EntityType="MyService.Authors">
+                    <NavigationPropertyBinding Path="books" Target="Books"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Books">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="price" Type="Edm.Decimal" Scale="variable"/>
+                <NavigationProperty Name="author" Type="MyService.Authors" Partner="books">
+                    <ReferentialConstraint Property="author_id" ReferencedProperty="id"/>
+                </NavigationProperty>
+                <Property Name="author_id" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="Authors">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <NavigationProperty Name="books" Type="Collection(MyService.Books)" Partner="author"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

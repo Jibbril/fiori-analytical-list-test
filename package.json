@@ -10,7 +10,7 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@sap/ux-specification": "^1.108.4",
+    "@sap/ux-specification": "^1.108.5",
     "sqlite3": "^5.1.6"
   },
   "scripts": {
@@ -42,6 +42,7 @@
     }
   },
   "sapux": [
-    "app/list-report-app"
+    "app/list-report-app",
+    "app/foldable-groups"
   ]
 }

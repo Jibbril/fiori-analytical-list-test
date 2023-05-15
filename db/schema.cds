@@ -1,5 +1,11 @@
 namespace my;
 
+@Aggregation.ApplySupported: {
+    GroupableProperties: [author_id ],
+    AggregatableProperties: [{
+        Property: price,
+    }],
+}
 entity Books {
     key id: Integer;
     name: String; 

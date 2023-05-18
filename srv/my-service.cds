@@ -6,11 +6,10 @@ service MyService {
     CustomAggregate #stock : 'Edm.Int32',
     ApplySupported: {
         GroupableProperties: [genre, authorName, name],
-        AggregatableProperties: [{
-            Property: stock,
-        },{
-            Property: price,
-        }],
+        AggregatableProperties: [
+            { Property: stock, },
+            { Property: price, }
+        ],
     }
  }
     entity Books as projection on my.Books {

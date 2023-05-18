@@ -1,31 +1,31 @@
-id;name;price;author_id;genre
-1;Lord Of The Rings;19.99;1;drama
-2;Harry Potter and the Philosophers Stone;9.99;2;drama
-3;Harry Potter and the Chamber of Secrets;9.99;2;drama
-4;Thinking fast and slow;15.99;3;drama
-5;Meditations;12.99;4;drama
-6;A Song of Ice and Fire;24.99;5;drama
-7;The Great Gatsby;10.99;6;drama
-8;To Kill a Mockingbird;11.99;7;drama
-9;Pride and Prejudice;8.99;8;drama
-10;1984;14.99;9;drama
-11;The Catcher in the Rye;9.99;10;drama
-12;The Hobbit;17.99;1;drama
-13;The Da Vinci Code;12.99;11;drama
-14;The Hunger Games;10.99;12;drama
-15;The Alchemist;11.99;13;drama
-16;The Chronicles of Narnia;18.99;14;action
-17;The Fault in Our Stars;9.99;15;action
-18;Gone Girl;13.99;16;action
-19;The Girl with the Dragon Tattoo;10.99;17;action
-20;The Lord of the Flies;8.99;18;action
-21;The Shining;12.99;19;action
-22;The Book Thief;11.99;20;action
-23;The Hitchhiker's Guide to the Galaxy;9.99;21;action
-24;Brave New World;14.99;22;action
-25;The Picture of Dorian Gray;10.99;23;action
-26;The Sun Also Rises;12.99;24;action
-27;The Grapes of Wrath;11.99;25;action
-28;The Old Man and the Sea;9.99;26;action
-29;One Hundred Years of Solitude;13.99;27;action
-30;The Divine Comedy;10.99;28;action
+id;name;price;author_id;genre;stock
+1;Lord Of The Rings;19.99;1;drama;2
+2;Harry Potter and the Philosophers Stone;9.99;2;drama;2
+3;Harry Potter and the Chamber of Secrets;9.99;2;drama;2
+4;Thinking fast and slow;15.99;3;drama;2
+5;Meditations;12.99;4;drama;2
+6;A Song of Ice and Fire;24.99;5;drama;2
+7;The Great Gatsby;10.99;6;drama;2
+8;To Kill a Mockingbird;11.99;7;drama;2
+9;Pride and Prejudice;8.99;8;drama;2
+10;1984;14.99;9;drama;2
+11;The Catcher in the Rye;9.99;10;drama;2
+12;The Hobbit;17.99;1;drama;2
+13;The Da Vinci Code;12.99;11;drama;2
+14;The Hunger Games;10.99;12;drama;2
+15;The Alchemist;11.99;13;drama;2
+16;The Chronicles of Narnia;18.99;14;action;2
+17;The Fault in Our Stars;9.99;15;action;2
+18;Gone Girl;13.99;16;action;2
+19;The Girl with the Dragon Tattoo;10.99;17;action;2
+20;The Lord of the Flies;8.99;18;action;2
+21;The Shining;12.99;19;action;2
+22;The Book Thief;11.99;20;action;2
+23;The Hitchhiker's Guide to the Galaxy;9.99;21;action;2
+24;Brave New World;14.99;22;action;2
+25;The Picture of Dorian Gray;10.99;23;action;2
+26;The Sun Also Rises;12.99;24;action;2
+27;The Grapes of Wrath;11.99;25;action;2
+28;The Old Man and the Sea;9.99;26;action;2
+29;One Hundred Years of Solitude;13.99;27;action;2
+30;The Divine Comedy;10.99;28;action;2

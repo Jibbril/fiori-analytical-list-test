@@ -6,56 +6,51 @@ annotate service.Books with @UI.LineItem  : [
     { Label: 'Price', Value: price },
     { Label: 'authorName', Value: authorName },
     { Label: 'virtualAuthorName', Value: virtualAuthorName },
+    { Label: 'genre', Value: genre },
+    { Label: 'stock', Value: stock },
 ];
 
-annotate service.Books with @UI.SelectionPresentationVariant : {
-    $Type   : 'UI.SelectionPresentationVariantType',
-    Text    : 'My SelectionPresentationVariant',
-    SelectionVariant : {
-        $Type : 'UI.SelectionVariantType',
-        SelectOptions : [
-        ],
-        Text : 'My SelectionVariant'
-    },
-    PresentationVariant : {
-        $Type : 'UI.PresentationVariantType',
-        MaxItems : 30,
-        Visualizations : [
-            '@UI.Chart',
-            '@UI.LineItem'
-        ],  
-        GroupBy : [
-            name
-        ],
-        SortOrder : [
-        ]
-    }
-};
+annotate service.Books with @UI.SelectionFields: [
+    genre,
+    authorName,
+    // price,
+    // stock,
+];
 
 annotate service.Books with @UI.PresentationVariant: {
     GroupBy: [
-        authorName
+        genre
+        // authorName
     ],
-    Total: [ price ],
+    Total: [ 
+        price 
+    ],
     Visualizations: [
+        '@UI.Chart',
         '@UI.LineItem'
     ]
 };
 
 annotate service.Books with @UI.Chart: {
     ChartType: #Column,
-    Dimensions: [ name ],
+    Dimensions: [ name, genre],
     DimensionAttributes: [
-        { 
-            Dimension: name,
-            Role: #Category
-        }
+        // { 
+        //     Dimension: name,
+        //     Role: #Category
+        // },
     ],
-    Measures: [ price ],
+    Measures: [ 
+        price, 
+    ],
     MeasureAttributes: [
         { 
             Measure: price,
             Role: #Axis1
-        }
+        },
+        // { 
+        //     Measure: stock,
+        //     Role: #Axis1
+        // }
     ]
 };

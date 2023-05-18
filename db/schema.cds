@@ -1,38 +1,12 @@
 namespace my;
 
-@Aggregation : { 
-    CustomAggregate #price : 'Edm.Decimal',
-    ApplySupported: {
-        GroupableProperties: [genre],
-        AggregatableProperties: [{
-            Property: price,
-
-        }],
-        Transformations: [
-            'filter',
-            'groupby',
-            'aggregate',
-            'identity',
-            'search',
-            'topsum',
-            'bottomsum',
-            'topcount',
-            'bottomcount',
-            'toppercent',
-            'bottompercent',
-            'concat',
-            'expand',
-        ]
-    }
- }
 entity Books {
     key id: Integer;
     name: String; 
 
     genre: String;
-    @Aggregation.default: #SUM
-    @Analytics.Measure: true
     price: Decimal default 0.0;
+    stock: Integer default 0;
 
     virtual virtualAuthorName: String;
 

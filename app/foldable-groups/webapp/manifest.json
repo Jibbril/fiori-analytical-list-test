@@ -110,7 +110,17 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem" : {
                   "tableSettings": {
-                    "type": "AnalyticalTable"
+                    "type": "AnalyticalTable",
+                    "quickVariantSelection": {
+                            "paths":[
+                                {
+                                    "annotationPath": "@com.sap.vocabularies.UI.v1.SelectionVariant#GE50M"
+                                },
+                                {
+                                    "annotationPath": "@com.sap.vocabularies.UI.v1.SelectionVariant#LE50M"
+                                }
+                            ]
+                        }
                   }
                }
               },
@@ -127,7 +137,7 @@
                         "annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant#default"
                         }],
                     "secondary": [{
-                        "annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant#default"
+                        "annotationPath": "@com.sap.vocabularies.UI.v1.LineItem"
                         }],
                     "defaultPath": "both"
                 }]

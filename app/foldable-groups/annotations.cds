@@ -140,7 +140,7 @@ annotate service.Books with @UI.SelectionVariant #LE50M: {
 // annotate service.Books with @(UI.SelectionPresentationVariant: {
 //     $Type : 'UI.SelectionPresentationVariantType',
 //     Text : 'Default',
-//     SelectionVariant : ![@UI.SelectionVariant#GE50M],
+//     SelectionVariant : ![@UI.SelectionVariant#default],
 //     PresentationVariant: ![@UI.PresentationVariant#noChart],
 // });
 

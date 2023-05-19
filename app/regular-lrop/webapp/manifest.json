@@ -114,6 +114,18 @@
                   }
                 }
               },
+              "views": {
+                "paths": [
+                    {
+                        "key": "tab1",
+                        "annotationPath": "@com.sap.vocabularies.UI.v1.SelectionVariant#genreFantasy"
+                    },
+                    {
+                        "key": "tab2",
+                        "annotationPath": "@com.sap.vocabularies.UI.v1.SelectionVariant#genreFiction"
+                    }
+                ]
+              },
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                     "tableSettings": {

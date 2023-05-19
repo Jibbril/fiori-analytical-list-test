@@ -35,6 +35,10 @@ annotate service.Books with @UI.PresentationVariant#default: {
     ]
 };
 
+annotate service.Books with @UI.PresentationVariant#noChart: {
+    Visualizations: [ '@UI.LineItem' ]
+};
+
 annotate service.Books with @UI.Chart #default: {
     ChartType: #Column,
     Dimensions: [ genre],
@@ -59,6 +63,40 @@ annotate service.Books with @UI.SelectionVariant #default: {
     $Type : 'UI.SelectionVariantType',
     Text : 'Default',
     SelectOptions : [],
+};
+
+annotate service.Books with @UI.SelectionVariant #genreFiction: {
+    $Type : 'UI.SelectionVariantType',
+    Text : 'Genre Fiction',
+    SelectOptions : [{
+            $Type : 'UI.SelectOptionType',
+            PropertyName : genre,
+            Ranges : [
+                {
+                    $Type : 'UI.SelectionRangeType',
+                    Sign : #I,
+                    Option : #EQ,
+                    Low : 'fiction',
+                },
+            ],
+        }],
+};
+
+annotate service.Books with @UI.SelectionVariant #genreFantasy: {
+    $Type : 'UI.SelectionVariantType',
+    Text : 'Genre Fantasy',
+    SelectOptions : [{
+            $Type : 'UI.SelectOptionType',
+            PropertyName : genre,
+            Ranges : [
+                {
+                    $Type : 'UI.SelectionRangeType',
+                    Sign : #I,
+                    Option : #EQ,
+                    Low : 'fantasy',
+                },
+            ],
+        }],
 };
 
 annotate service.Books with @UI.SelectionVariant #GE50M: {
@@ -98,6 +136,13 @@ annotate service.Books with @UI.SelectionVariant #LE50M: {
         },
     ],
 };
+
+// annotate service.Books with @(UI.SelectionPresentationVariant: {
+//     $Type : 'UI.SelectionPresentationVariantType',
+//     Text : 'Default',
+//     SelectionVariant : ![@UI.SelectionVariant#GE50M],
+//     PresentationVariant: ![@UI.PresentationVariant#noChart],
+// });
 
 annotate service.Books with @(UI.SelectionPresentationVariant #default: {
     $Type : 'UI.SelectionPresentationVariantType',

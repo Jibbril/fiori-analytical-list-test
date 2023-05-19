@@ -1,29 +1,21 @@
-id;name
-1;J.R.R. Tolkien
-2;J.K. Rowling
-3;Daniel Kahneman
-4;Marcus Aurelius
-5;George R.R. Martin
-6;F. Scott Fitzgerald
-7;Harper Lee
-8;Jane Austen
-9;George Orwell
-10;J.D. Salinger
-11;Dan Brown
-12;Suzanne Collins
-13;Paulo Coelho
-14;C.S. Lewis
-15;John Green
-16;Gillian Flynn
-17;Stieg Larsson
-18;William Golding
-19;Stephen King
-20;Markus Zusak
-21;Douglas Adams
-22;Aldous Huxley
-23;Oscar Wilde
-24;Ernest Hemingway
-25;John Steinbeck
-26;Ernest Hemingway
-27;Gabriel Garcia Marquez
-28;Dante Alighieri
+id;name;age;placeOfBirth;deceased
+1;J.R.R. Tolkien;81;Bloemfontein, South Africa;true
+2;J.K. Rowling;58;Yate, United Kingdom;false
+3;Daniel Kahneman;89;Tel Aviv, Israel;false
+4;George R.R. Martin;75;Bayonne, New Jersey, USA;false
+5;Stephen King;75;Portland, Maine, USA;false
+6;Agatha Christie;85;Torquay, United Kingdom;true
+7;Dan Brown;59;Exeter, New Hampshire, USA;false
+8;George Orwell;46;Motihari, British India;true
+9;Ernest Hemingway;61;Oak Park, Illinois, USA;true
+10;Jane Austen;41;Steventon, United Kingdom;true
+11;J.D. Salinger;91;New York City, USA;true
+12;Harper Lee;89;Monroeville, Alabama, USA;true
+13;Emily Brontë;30;Thornton, United Kingdom;true
+14;Margaret Atwood;84;Ottawa, Canada;false
+15;Leo Tolstoy;82;Yasnaya Polyana, Russian Empire;true
+16;F. Scott Fitzgerald;44;Saint Paul, Minnesota, USA;true
+17;H.P. Lovecraft;46;Providence, Rhode Island, USA;true
+18;Philip K. Dick;53;Chicago, Illinois, USA;true
+19;Thomas Harris;82;Jackson, Tennessee, USA;false
+20;Douglas Adams;49;Cambridge, United Kingdom;true

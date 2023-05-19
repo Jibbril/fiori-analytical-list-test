@@ -1,31 +1,25 @@
-id;name;price;author_id;genre;stock
-1;Lord Of The Rings;19.99;1;drama;2
-2;Harry Potter and the Philosophers Stone;9.99;2;drama;2
-3;Harry Potter and the Chamber of Secrets;9.99;2;drama;2
-4;Thinking fast and slow;15.99;3;drama;2
-5;Meditations;12.99;4;drama;2
-6;A Song of Ice and Fire;24.99;5;drama;2
-7;The Great Gatsby;10.99;6;drama;2
-8;To Kill a Mockingbird;11.99;7;drama;2
-9;Pride and Prejudice;8.99;8;drama;2
-10;1984;14.99;9;drama;2
-11;The Catcher in the Rye;9.99;10;drama;2
-12;The Hobbit;17.99;1;drama;2
-13;The Da Vinci Code;12.99;11;drama;2
-14;The Hunger Games;10.99;12;drama;2
-15;The Alchemist;11.99;13;drama;2
-16;The Chronicles of Narnia;18.99;14;action;2
-17;The Fault in Our Stars;9.99;15;action;2
-18;Gone Girl;13.99;16;action;2
-19;The Girl with the Dragon Tattoo;10.99;17;action;2
-20;The Lord of the Flies;8.99;18;action;2
-21;The Shining;12.99;19;action;2
-22;The Book Thief;11.99;20;action;2
-23;The Hitchhiker's Guide to the Galaxy;9.99;21;action;2
-24;Brave New World;14.99;22;action;2
-25;The Picture of Dorian Gray;10.99;23;action;2
-26;The Sun Also Rises;12.99;24;action;2
-27;The Grapes of Wrath;11.99;25;action;2
-28;The Old Man and the Sea;9.99;26;action;2
-29;One Hundred Years of Solitude;13.99;27;action;2
-30;The Divine Comedy;10.99;28;action;2
+id;name;price;author_id;genre;stock;releaseDate;releaseYear;totalSold
+1;Lord Of The Rings;19.99;1;fantasy;200;1954-07-29;1954;15000000
+2;The Hobbit;15.99;1;fantasy;150;1937-09-21;1937;10000000
+3;Harry Potter and the Philosophers Stone;9.99;2;fantasy;500;1997-06-26;1997;120000000
+4;Harry Potter and the Chamber of Secrets;9.99;2;fantasy;450;1998-07-02;1998;77000000
+5;Thinking fast and slow;15.99;3;non-fiction;300;2011-10-25;2011;2000000
+6;A Song of Ice and Fire;24.99;4;fantasy;220;1996-08-01;1996;9000000
+7;The Shining;19.99;5;horror;200;1977-01-28;1977;5000000
+8;The Murder of Roger Ackroyd;14.99;6;mystery;150;1926-06-10;1926;5000000
+9;The Da Vinci Code;12.99;7;thriller;300;2003-04-01;2003;8000000
+10;1984;14.99;8;dystopian;400;1949-06-08;1949;25000000
+11;The Old Man and The Sea;9.99;9;fiction;250;1952-09-01;1952;2000000
+12;Pride and Prejudice;9.99;10;romance;300;1813-01-28;1813;20000000
+13;The Catcher in the Rye;7.99;11;fiction;350;1951-07-16;1951;65000000
+14;To Kill a Mockingbird;9.99;12;fiction;400;1960-07-11;1960;40000000
+15;Wuthering Heights;10.99;13;romance;200;1847-12-01;1847;10000000
+16;The Handmaid's Tale;11.99;14;dystopian;350;1985-02-17;1985;8000000
+17;War and Peace;25.99;15;historical;100;1869-01-01;1869;36000000
+18;The Great Gatsby;14.99;16;fiction;300;1925-04-10;1925;25000000
+19;At the Mountains of Madness;8.99;17;horror;150;1936-02-01;1936;1000000
+20;Do Androids Dream of Electric Sheep?;11.99;18;science fiction;250;1968-01-01;1968;5000000
+21;The Silence of the Lambs;9.99;19;thriller;300;1988-10-18;1988;3000000
+22;The Hitchhiker's Guide to the Galaxy;12.99;20;science fiction;350;1979-10-12;1979;14000000
+23;A Clash of Kings;24.99;4;fantasy;210;1998-11-16;1998;8500000
+24;It;21.99;5;horror;190;1986-09-15;1986;4500000

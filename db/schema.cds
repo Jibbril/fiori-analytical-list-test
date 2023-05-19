@@ -1,12 +1,14 @@
 namespace my;
 
 entity Books {
-    key id: Integer;
-    name: String; 
-
-    genre: String;
-    price: Decimal default 0.0;
-    stock: Integer default 0;
+    key id:         Integer;
+    name:           String; 
+    genre:          String;
+    releaseDate:    String;
+    releaseYear:    String;
+    price:          Decimal default 0.0;
+    stock:          Integer default 0;
+    totalSold:      Integer default 0;
 
     virtual virtualAuthorName: String;
 
@@ -15,7 +17,10 @@ entity Books {
 
 entity Authors { 
     key id: Integer;
-    name: String;
+    name:           String;
+    age:            Integer;
+    placeOfBirth:   String;
+    deceased:       Boolean default false;
 
     books: Association to many Books on books.author = $self;
 }

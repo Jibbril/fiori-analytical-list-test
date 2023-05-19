@@ -105,12 +105,30 @@
           "options": {
             "settings": {
               "entitySet": "Books",
+              "initialLoad": true,
               "variantManagement": "Page",
               "navigation": {
                 "Books": {
                   "detail": {
                     "route": "BooksObjectPage"
                   }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                    "tableSettings": {
+                        "type:" : "ResponsiveTable",
+                        "quickVariantSelection": {
+                            "paths":[
+                                {
+                                    "annotationPath": "@com.sap.vocabularies.UI.v1.SelectionVariant#GE50M"
+                                },
+                                {
+                                    "annotationPath": "@com.sap.vocabularies.UI.v1.SelectionVariant#LE50M"
+                                }
+                            ]
+                        }
+                    }
                 }
               }
             }

@@ -19,7 +19,7 @@ annotate service.Books with @UI.SelectionFields: [
     name,
 ];
 
-annotate service.Books with @UI.PresentationVariant: {
+annotate service.Books with @UI.PresentationVariant#default: {
     GroupBy: [
         // genre
         // authorName
@@ -30,12 +30,12 @@ annotate service.Books with @UI.PresentationVariant: {
         totalSold 
     ],
     Visualizations: [
-        '@UI.Chart',
+        '@UI.Chart#default',
         '@UI.LineItem'
     ]
 };
 
-annotate service.Books with @UI.Chart: {
+annotate service.Books with @UI.Chart #default: {
     ChartType: #Column,
     Dimensions: [ genre],
     DimensionAttributes: [
@@ -55,7 +55,7 @@ annotate service.Books with @UI.Chart: {
     ]
 };
 
-annotate service.Books with @UI.SelectionVariant: {
+annotate service.Books with @UI.SelectionVariant #default: {
     $Type : 'UI.SelectionVariantType',
     Text : 'Default',
     SelectOptions : [],
@@ -99,23 +99,23 @@ annotate service.Books with @UI.SelectionVariant #LE50M: {
     ],
 };
 
-annotate service.Books with @(UI.SelectionPresentationVariant : {
+annotate service.Books with @(UI.SelectionPresentationVariant #default: {
     $Type : 'UI.SelectionPresentationVariantType',
     Text : 'Default',
-    SelectionVariant : ![@UI.SelectionVariant],
-    PresentationVariant: ![@UI.PresentationVariant],
+    SelectionVariant : ![@UI.SelectionVariant#default],
+    PresentationVariant: ![@UI.PresentationVariant#default],
 });
 
-annotate service.Books with @( UI.SelectionPresentationVariant #view1 : {
+annotate service.Books with @(UI.SelectionPresentationVariant #view1 : {
     $Type : 'UI.SelectionPresentationVariantType',
     Text : 'More than 50M',
     SelectionVariant : ![@UI.SelectionVariant#GE50M],
-    PresentationVariant: ![@UI.PresentationVariant],
+    PresentationVariant: ![@UI.PresentationVariant#default],
 });
 
-annotate service.Books with @( UI.SelectionPresentationVariant #view2 : {
+annotate service.Books with @(UI.SelectionPresentationVariant #view2 : {
     $Type : 'UI.SelectionPresentationVariantType',
     Text : 'Less than 50M',
     SelectionVariant : ![@UI.SelectionVariant#LE50M],
-    PresentationVariant: ![@UI.PresentationVariant],
+    PresentationVariant: ![@UI.PresentationVariant#default],
 });

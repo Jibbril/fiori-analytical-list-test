@@ -124,10 +124,10 @@
               "views": {
                 "paths": [{
                     "primary": [{
-                        "annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant"
+                        "annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant#default"
                         }],
                     "secondary": [{
-                        "annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant"
+                        "annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant#default"
                         }],
                     "defaultPath": "both"
                 }]

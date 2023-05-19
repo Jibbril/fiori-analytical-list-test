@@ -10,8 +10,6 @@ entity Books {
     stock:          Integer default 0;
     totalSold:      Integer default 0;
 
-    virtual virtualAuthorName: String;
-
     author: Association to Authors;
 };
 

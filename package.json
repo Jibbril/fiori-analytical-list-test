@@ -43,11 +43,12 @@
   },
   "sapux": [
     "app/list-report-app",
-    "app/foldable-groups"
+    "app/foldable-groups",
+    "app/regular-lrop"
   ],
-  "cds":{
+  "cds": {
     "features": {
-        "odata_new_parser": true
+      "odata_new_parser": true
     }
   }
 }

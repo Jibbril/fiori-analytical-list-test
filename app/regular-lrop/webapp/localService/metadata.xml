@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Aggregation.V1.xml">
+        <edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Analytics.xml">
+        <edmx:Include Alias="Analytics" Namespace="com.sap.vocabularies.Analytics.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="MyService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Books" EntityType="MyService.Books">
+                    <NavigationPropertyBinding Path="author" Target="Authors"/>
+                </EntitySet>
+                <EntitySet Name="Authors" EntityType="MyService.Authors">
+                    <NavigationPropertyBinding Path="books" Target="Books"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Books">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="genre" Type="Edm.String"/>
+                <Property Name="releaseDate" Type="Edm.String"/>
+                <Property Name="releaseYear" Type="Edm.String"/>
+                <Property Name="price" Type="Edm.Decimal" DefaultValue="0" Scale="variable"/>
+                <Property Name="stock" Type="Edm.Int32" DefaultValue="0"/>
+                <Property Name="totalSold" Type="Edm.Int32" DefaultValue="0"/>
+                <NavigationProperty Name="author" Type="MyService.Authors" Partner="books">
+                    <ReferentialConstraint Property="author_id" ReferencedProperty="id"/>
+                </NavigationProperty>
+                <Property Name="author_id" Type="Edm.Int32"/>
+                <Property Name="authorName" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Authors">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="age" Type="Edm.Int32"/>
+                <Property Name="placeOfBirth" Type="Edm.String"/>
+                <Property Name="deceased" Type="Edm.Boolean" DefaultValue="false"/>
+                <NavigationProperty Name="books" Type="Collection(MyService.Books)" Partner="author"/>
+            </EntityType>
+            <Annotations Target="MyService.Books">
+                <Annotation Term="Aggregation.CustomAggregate" Qualifier="price" String="Edm.Decimal"/>
+                <Annotation Term="Aggregation.CustomAggregate" Qualifier="stock" String="Edm.Int32"/>
+                <Annotation Term="Aggregation.CustomAggregate" Qualifier="totalSold" String="Edm.Int32"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>genre</PropertyPath>
+                                <PropertyPath>authorName</PropertyPath>
+                                <PropertyPath>releaseYear</PropertyPath>
+                                <PropertyPath>name</PropertyPath>
+                                <PropertyPath>releaseDate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="stock"/>
+                                </Record>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="price"/>
+                                </Record>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="totalSold"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="MyService.EntityContainer/Books">
+                <Annotation Term="Aggregation.CustomAggregate" Qualifier="price" String="Edm.Decimal"/>
+                <Annotation Term="Aggregation.CustomAggregate" Qualifier="stock" String="Edm.Int32"/>
+                <Annotation Term="Aggregation.CustomAggregate" Qualifier="totalSold" String="Edm.Int32"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>genre</PropertyPath>
+                                <PropertyPath>authorName</PropertyPath>
+                                <PropertyPath>releaseYear</PropertyPath>
+                                <PropertyPath>name</PropertyPath>
+                                <PropertyPath>releaseDate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="stock"/>
+                                </Record>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="price"/>
+                                </Record>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="totalSold"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="MyService.Books/price">
+                <Annotation Term="Analytics.Measure" Bool="true"/>
+            </Annotations>
+            <Annotations Target="MyService.Books/stock">
+                <Annotation Term="Analytics.Measure" Bool="true"/>
+            </Annotations>
+            <Annotations Target="MyService.Books/totalSold">
+                <Annotation Term="Analytics.Measure" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

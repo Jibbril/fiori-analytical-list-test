@@ -1,29 +1,34 @@
 using MyService as service from '../../srv/my-service';
 
 annotate service.Books with @UI.LineItem  : [
-    { Label: 'Title', Value: name },
-    { Label: 'author.name', Value: author.name },
-    { Label: 'Price', Value: price },
-    { Label: 'authorName', Value: authorName },
-    { Label: 'virtualAuthorName', Value: virtualAuthorName },
-    { Label: 'genre', Value: genre },
-    { Label: 'stock', Value: stock },
+    { Value: name },
+    { Value: totalSold },
+    { Value: price },
+    { Value: stock },
+    { Value: authorName },
+    { Value: virtualAuthorName },
+    { Value: genre },
+    { Value: releaseYear },
+    { Value: releaseDate },
 ];
 
 annotate service.Books with @UI.SelectionFields: [
     genre,
     authorName,
-    // price,
-    // stock,
+    releaseYear,
+    price,
+    totalSold,
 ];
 
 annotate service.Books with @UI.PresentationVariant: {
     GroupBy: [
-        genre
+        // genre
         // authorName
     ],
     Total: [ 
-        price 
+        price,
+        stock,
+        totalSold 
     ],
     Visualizations: [
         '@UI.Chart',
@@ -33,10 +38,10 @@ annotate service.Books with @UI.PresentationVariant: {
 
 annotate service.Books with @UI.Chart: {
     ChartType: #Column,
-    Dimensions: [ name, genre],
+    Dimensions: [ genre],
     DimensionAttributes: [
         // { 
-        //     Dimension: name,
+        //     Dimension: genre,
         //     Role: #Category
         // },
     ],

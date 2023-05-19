@@ -52,87 +52,70 @@ annotate service.Books with @UI.Chart: {
             Measure: price,
             Role: #Axis1
         },
-        // { 
-        //     Measure: stock,
-        //     Role: #Axis1
-        // }
     ]
 };
 
-annotate service.Books with @(
-    UI.SelectionPresentationVariant : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        Text : 'Default',
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            Text : 'Default',
-            SelectOptions : [
-                {
-                    $Type : 'UI.SelectOptionType',
-                    PropertyName : totalSold,
-                    Ranges : [
-                        {
-                            $Type : 'UI.SelectionRangeType',
-                            Sign : #I,
-                            Option : #GE,
-                            Low : 50000000,
-                        },
-                    ],
-                },
-            ],
-        },
-        PresentationVariant: ![@UI.PresentationVariant],
-    }
-);
+annotate service.Books with @UI.SelectionVariant: {
+    $Type : 'UI.SelectionVariantType',
+    Text : 'Default',
+    SelectOptions : [],
+};
 
-annotate service.Books with @(
-    UI.SelectionPresentationVariant #view1 : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        Text : 'More than 50M',
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            Text : 'More than 50M',
-            SelectOptions : [
+annotate service.Books with @UI.SelectionVariant #GE50M: {
+    $Type : 'UI.SelectionVariantType',
+    Text : 'More than 50M',
+    SelectOptions : [
+        {
+            $Type : 'UI.SelectOptionType',
+            PropertyName : totalSold,
+            Ranges : [
                 {
-                    $Type : 'UI.SelectOptionType',
-                    PropertyName : totalSold,
-                    Ranges : [
-                        {
-                            $Type : 'UI.SelectionRangeType',
-                            Sign : #I,
-                            Option : #GE,
-                            Low : 50000000,
-                        },
-                    ],
+                    $Type : 'UI.SelectionRangeType',
+                    Sign : #I,
+                    Option : #GE,
+                    Low : 50000000,
                 },
             ],
         },
-        PresentationVariant: ![@UI.PresentationVariant],
-    }
-);
+    ],
+};
 
-annotate service.Books with @(
-    UI.SelectionPresentationVariant #view2 : {
-        $Type : 'UI.SelectionPresentationVariantType',
-        Text : 'Less than 50M',
-        SelectionVariant : {
-            $Type : 'UI.SelectionVariantType',
-            Text : 'Less than 50M',
-            SelectOptions : [
+annotate service.Books with @UI.SelectionVariant #LE50M: {
+    $Type : 'UI.SelectionVariantType',
+    Text : 'Less than 50M',
+    SelectOptions : [
+        {
+            $Type : 'UI.SelectOptionType',
+            PropertyName : totalSold,
+            Ranges : [
                 {
-                    $Type : 'UI.SelectOptionType',
-                    PropertyName : totalSold,
-                    Ranges : [
-                        {
-                            $Type : 'UI.SelectionRangeType',
-                            Sign : #I,
-                            Option : #LE,
-                            Low : 50000000,
-                        },
-                    ],
+                    $Type : 'UI.SelectionRangeType',
+                    Sign : #I,
+                    Option : #LE,
+                    Low : 50000000,
                 },
             ],
         },
-        PresentationVariant: ![@UI.PresentationVariant],
-    }
-);
+    ],
+};
+
+annotate service.Books with @(UI.SelectionPresentationVariant : {
+    $Type : 'UI.SelectionPresentationVariantType',
+    Text : 'Default',
+    SelectionVariant : ![@UI.SelectionVariant],
+    PresentationVariant: ![@UI.PresentationVariant],
+});
+
+annotate service.Books with @( UI.SelectionPresentationVariant #view1 : {
+    $Type : 'UI.SelectionPresentationVariantType',
+    Text : 'More than 50M',
+    SelectionVariant : ![@UI.SelectionVariant#GE50M],
+    PresentationVariant: ![@UI.PresentationVariant],
+});
+
+annotate service.Books with @( UI.SelectionPresentationVariant #view2 : {
+    $Type : 'UI.SelectionPresentationVariantType',
+    Text : 'Less than 50M',
+    SelectionVariant : ![@UI.SelectionVariant#LE50M],
+    PresentationVariant: ![@UI.PresentationVariant],
+});

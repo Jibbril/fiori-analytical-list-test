@@ -1,4 +1,5 @@
 using MyService as service from '../../srv/my-service';
+using from './annotations/kpi';
 
 annotate service.Books with @UI.LineItem  : [
     { Value: name },
@@ -52,10 +53,11 @@ annotate service.Books with @UI.Chart #default: {
         price, 
     ],
     MeasureAttributes: [
-        { 
-            Measure: price,
-            Role: #Axis1
-        },
+        // { 
+        //     Measure: price,
+        //     Role: #Axis1,
+        //     DataPoint: '@UI.DataPoint#price'
+        // },
     ]
 };
 

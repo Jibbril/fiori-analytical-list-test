@@ -142,6 +142,12 @@
                                         "defaultPath": "both"
                                     }
                                 ]
+                            },
+                            "keyPerformanceIndicators": {
+                                "KPIPrice": {
+                                    "entitySet": "Books",
+                                    "qualifier": "KPIPrice"
+                                }
                             }
                         }
                     },

@@ -1,4 +1,4 @@
-using MyService as service from '../../../srv/my-service';
+using MyService as service from '../my-service';
 
 annotate service.Books with @UI.KPI #KPIPrice: {
     ID: 'SomeNiceId',

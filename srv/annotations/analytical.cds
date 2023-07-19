@@ -2,7 +2,10 @@
 using MyService as service from '../my-service';
 
 annotate service.Books with @(Aggregation : { 
+    // CustomAggregates needed for ALP Table display/totals
     CustomAggregate #price : 'Edm.Decimal',
+    CustomAggregate #totalSold : 'Edm.Int32',
+    CustomAggregate #stock : 'Edm.Int32',
     ApplySupported: {
         GroupableProperties: [ genre, authorName, releaseYear, name, releaseDate],
         AggregatableProperties: [
@@ -47,4 +50,12 @@ annotate service.Books with {
     @Aggregation.default: #AVG 
     @Common.Label: 'Average Price'
     price;
+
+    @Aggregation.default: #SUM
+    @Common.Label: 'Total Sold'
+    totalSold;
+
+    @Aggregation.default: #SUM
+    @Common.Label: 'Stock'
+    stock;
 }
